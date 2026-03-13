@@ -25,29 +25,17 @@ node -v
 
 ## Step 2：了解作業內容
 
-### 2.1 檔案結構
+### 檔案結構
 
-```text
-week5/assignment/
-├── homework.js      # 作業檔案（你要編輯的）
-├── test.js          # 測試檔案
-└── README.md        # 本說明文件
-```
-
-### 2.2 作業任務總覽
-
-| 任務   | 配分 | 說明           |
-| ------ | ---- | -------------- |
-| 任務一 | 20%  | 產品查詢模組   |
-| 任務二 | 25%  | 購物車計算模組 |
-| 任務三 | 30%  | 購物車操作模組 |
-| 任務四 | 25%  | 訂單統計模組   |
+- homework.js：作業檔案（同學程式撰寫處）
+- test.js：測試檔案
+- README.md：說明文件
 
 ---
 
 ## Step 3：完成各項任務
 
-### 任務一：產品查詢模組 (20%)
+### 任務一：產品查詢模組
 
 需完成以下函式：
 
@@ -58,7 +46,7 @@ week5/assignment/
 | `getDiscountRate(product)`                  | 計算折扣率（如 "8折"） | `Math.round()`      |
 | `getAllCategories(products)`                | 取得不重複分類         | `Set` 或 `filter()` |
 
-### 任務二：購物車計算模組 (25%)
+### 任務二：購物車計算模組
 
 需完成以下函式：
 
@@ -70,7 +58,7 @@ week5/assignment/
 | `calculateCartItemCount(carts)`     | 商品總數量       | `reduce()`           |
 | `isProductInCart(carts, productId)` | 檢查是否在購物車 | `some()` 或 `find()` |
 
-### 任務三：購物車操作模組 (30%)
+### 任務三：購物車操作模組
 
 需完成以下函式：
 
@@ -81,22 +69,24 @@ week5/assignment/
 | `removeFromCart(carts, cartId)`                      | 移除商品   | `filter()`         |
 | `clearCart()`                                        | 清空購物車 | 回傳 `[]`          |
 
-**重要：任務三的函式都必須回傳「新陣列」，不可修改原本的 carts 陣列！**
+**提醒：購物車操作的函式需回傳「新陣列」，不可修改原本的 carts 陣列！**
+
+概念舉例：
 
 ```javascript
 // ❌ 錯誤：直接修改原陣列
 function addToCart(carts, product, quantity) {
-  carts.push({ product, quantity });
-  return carts;
+	carts.push({ product, quantity });
+	return carts;
 }
 
 // ✓ 正確：回傳新陣列
 function addToCart(carts, product, quantity) {
-  return [...carts, { id: 'cart-new', product, quantity }];
+	return [...carts, { id: "cart-new", product, quantity }];
 }
 ```
 
-### 任務四：訂單統計模組 (25%)
+### 任務四：訂單統計模組
 
 需完成以下函式：
 
@@ -123,7 +113,7 @@ function addToCart(carts, product, quantity) {
 
 ## Step 4：測試與驗證
 
-### 4.1 快速測試（看 console.log 輸出）
+### 4.1 快速測試（查看 console.log 輸出）
 
 ```bash
 node homework.js
@@ -147,7 +137,7 @@ node test.js
 ...
 
 ==========================================
-測試結果: 28 通過, 0 失敗, 共 28 項
+測試結果: 34 通過, 0 失敗, 共 34 項
 ==========================================
 
 🎉 太棒了！所有測試都通過了！
@@ -172,4 +162,4 @@ node test.js
 1. 完成 `homework.js` 中的所有函式
 2. 執行 `node test.js` 確保測試通過
 3. 將程式碼上傳至 GitHub
-4. 提交 GitHub 連結
+4. 提交 GitHub Repo 連結
